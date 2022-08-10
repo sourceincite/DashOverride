@@ -14,7 +14,7 @@ The exploit was tested against 8.6.3.19682901 using the file `vRealize-Operation
 
 ## Notes
 
-- This exploit chains three vulnerabilities that have been [patched](TODO). More details can be found in the [blog post](https://srcincite.io/blog/2022/08/09/from-shared-dash-to-root-bash-pre-authenticated-rce-in-vmware-vrealize-operations-manager.html):
+- This exploit chains three vulnerabilities that have been [patched](https://www.vmware.com/security/advisories/VMSA-2022-0022.html). More details can be found in the [blog post](https://srcincite.io/blog/2022/08/09/from-shared-dash-to-root-bash-pre-authenticated-rce-in-vmware-vrealize-operations-manager.html):
 
   - [CVE-2022-31675 - MainPortalFilter ui Authentication Bypass](https://srcincite.io/advisories/src-2022-0015/)
   - [CVE-2022-31674 - SupportLogAction Information Disclosure](https://srcincite.io/advisories/src-2022-0016/)
