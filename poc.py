@@ -75,7 +75,6 @@ import sys
 import json
 import time
 import socket
-import select
 import random
 import string
 import urllib3
