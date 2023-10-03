@@ -4,7 +4,7 @@
 
 ## Found by
 
-Steven Seeley of Qihoo 360 Vulnerability Research Insititute
+Steven Seeley of Qihoo 360 Vulnerability Research Institute
 
 ## Tested versions
 
