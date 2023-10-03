@@ -6,7 +6,7 @@ This is a pre-authenticated RCE exploit for VMware vRealize Operations Manager (
 
 ## Author
 
-Steven Seeley of Qihoo 360 Vulnerability Research Insititute
+Steven Seeley of Qihoo 360 Vulnerability Research Institute
 
 ## Tested
 
